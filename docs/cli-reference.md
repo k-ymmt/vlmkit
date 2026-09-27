@@ -84,6 +84,7 @@ vlmkit diff html --url http://localhost:3000/ --current-url http://localhost:808
 
 # Snapshot URLs (creates baseline on first run, diffs on subsequent runs)
 vlmkit snapshot http://localhost:3000/ http://localhost:3000/about/ --output snapshots/
+vlmkit snapshot ios:dev.vlmkit.sample --output snapshots/   # the booted iOS Simulator's frame, one viewport per device+runtime
 
 # Use explicit labels when URL-derived names are not ideal
 vlmkit snapshot http://localhost:3000/issues?severity=critical --label critical-issues
@@ -1000,9 +1001,14 @@ vlmkit scan component <screenshot.png>         # Crop to standalone PNGs
   # --min-area <px>      min filled px per component (default 200)
   # --preset game-ui     = --min-area 24 --top-n 24, for small high-contrast frames
 vlmkit scan breakpoints <html-file>            # Discover responsive breakpoints
-vlmkit scan a11y <url|dump.xml> [--out a11y.json] # A platform's accessibility tree + frame as vlmkit-a11y/1:
+vlmkit scan a11y <url|dump.xml|ios:bundle-id> [--out a11y.json] # A platform's accessibility tree + frame as vlmkit-a11y/1:
                                                # Flutter web (semantics switched on, --click to reach a
-                                               # screen) or an Android uiautomator dump (--density dpi)
+                                               # screen), an Android uiautomator dump (--density dpi), or
+                                               # an app on the booted iOS Simulator (--tap to reach a screen,
+                                               # --dump to keep the raw dump) — docs/ios-simulator.md
+vlmkit scan scene <ios:bundle-id|dump.json> [--out scene.json] # The app's painted view hierarchy as the --elements
+                                               # scene + its frame at 1x, for check integrity / composition /
+                                               # color / design / copy with no simulator
 vlmkit scan style <html|url> [--out snap.json] # One page load for check design / composition / color; then
                                                # `vlmkit check design|composition|color --from snap.json`
                                                # judges it with no browser, same report as the live run

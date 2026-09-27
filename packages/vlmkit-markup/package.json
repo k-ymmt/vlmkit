@@ -30,6 +30,7 @@
     "markup-core-api/moon.pkg",
     "markup-core-cli/**/*.mbt",
     "markup-core-cli/moon.pkg",
+    "ios-agent/**",
     "README.md",
     "LICENSE"
   ],

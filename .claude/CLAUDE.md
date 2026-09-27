@@ -239,6 +239,42 @@ In this sandbox Chromium cannot verify the egress proxy's CA, so a live site is 
 HAR recorded through Node (`NODE_EXTRA_CA_CERTS=/root/.ccr/ca-bundle.crt NODE_USE_ENV_PROXY=1`)
 with `--har` — never by turning TLS verification off.
 
+## iOS Simulator with no code in the app (`scan a11y ios:` · `scan scene ios:` · `snapshot ios:`)
+
+```bash
+examples/ios-sample/build.sh                                         # the fixture: one swiftc call, installed on the booted device
+vlmkit scan a11y ios:dev.vlmkit.sample --tap "Open profile" --out a11y.json && vlmkit check a11y tree a11y.json
+vlmkit scan scene ios:dev.vlmkit.sample --out scene.json && vlmkit check integrity --elements scene.json --image scene.png
+vlmkit snapshot ios:dev.vlmkit.sample --output snapshots/            # baseline, then diff; one viewport per device+runtime
+vlmkit scan a11y ios:dev.vlmkit.sample --dump d.json                 # keep the raw dump; `scan a11y d.json --frame …` needs no simulator
+```
+
+The app is relaunched with `packages/vlmkit-markup/ios-agent/VlmkitAgent.m` injected through
+`SIMCTL_CHILD_DYLD_INSERT_LIBRARIES` (built by `xcrun clang` on first use, cached by content); it
+serves a unix socket and reports, never judges. `docs/ios-simulator.md` is the guide,
+`docs/reports/2026-09-27-ios-simulator-v1.md` the round. Measured, not to re-learn:
+
+- **LLDB attach is refused** on any simulator process without `get-task-allow` ("Not allowed to
+  attach"); injection loads into Apple's own apps. Do not reopen the LLDB route for the simulator.
+- **UIKit answers accessibility only when the device says a client exists.** One key does it:
+  `simctl spawn <udid> defaults write com.apple.Accessibility ApplicationAccessibilityEnabled -bool true`
+  (read at launch; `scan` sets it and says so). Without it a `UILabel` has no label at all.
+- **Only announced elements tap.** A window answers `accessibilityRespondsToUserInteraction`; giving
+  it `tap` made it the operable ancestor of every button and `target-undersized` went silent.
+- **`accessibilityElements` replaces subviews.** The agent dumps the announced list first, the host
+  stops at it — otherwise the `UISwitch` under a SwiftUI `Toggle` is a second, nameless switch.
+- **`--tap` lands on `accessibilityActivationPoint`**, not the frame's centre: a `Toggle` announces
+  its row and acts on its switch. The touch is KIF-style (private `UITouch` setters + `IOHIDEvent`
+  + `sendEvent:`), hit-tested; every selector exists on iOS 27.0 and `{"cmd":"methods"}` lists a
+  class's real ones for the next iOS.
+- **SF Symbols name themselves** ("Gear shape"); a fixture's unlabelled button has to draw its glyph.
+- **The scene keeps UIKit's insides out**: controls are leaves (a `UISwitch` holds a 630pt image
+  view), `_`-prefixed chrome is walked but not recorded, a bordered text field is `outline: true`.
+- Xcode 27.1 beta: `Simulator.app` is `DeviceHub.app`; a headless `simctl boot` of iOS 26.5 never
+  finished here. `resolveDevice` refuses to boot and prints the command.
+- Tests (`packages/vlmkit-markup/src/ios/ios.test.ts`) read the dumps in `fixtures/ios-sample/`;
+  nothing runs a simulator in CI. Regenerate the dumps after changing the fixture app.
+
 ## Explanatory animations (`vlmkit-anim`) and their evaluation loop
 
 ```bash

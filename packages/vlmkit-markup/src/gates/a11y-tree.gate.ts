@@ -35,6 +35,7 @@ function formatScanA11y(report: ScanA11yReport, rules?: RuleView): string {
     "",
     `${BOLD}${CYAN}vlmkit scan a11y${RESET}  ${DIM}${report.platform}${RESET}`,
     `${DIM}source: ${report.source}${report.clicks.length ? ` → ${report.clicks.map((c) => JSON.stringify(c)).join(" → ")}` : ""}${RESET}`,
+    ...report.notes.map((n) => `${DIM}  ${n}${RESET}`),
     "",
     `tree:  ${report.out}  (${report.viewport.width}x${report.viewport.height})`,
     `frame: ${report.frame ?? `${DIM}none — contrast will not be measured (pass --frame)${RESET}`}`,
@@ -51,7 +52,7 @@ function formatScanA11y(report: ScanA11yReport, rules?: RuleView): string {
 export const a11yScanGate = defineGate<ScanA11yReport, ScanA11yOptions>({
   id: "scan.a11y",
   command: ["scan", "a11y"],
-  title: "Accessibility tree snapshot (Flutter web, Android)",
+  title: "Accessibility tree snapshot (Flutter web, Android, iOS Simulator)",
   summary: "Write a platform's accessibility tree and its frame for check a11y tree",
   category: "correctness",
   usage: `Collects an accessibility tree as vlmkit-a11y/1 JSON plus the frame it was
@@ -70,9 +71,16 @@ painted into, from a platform with no DOM to read paint from:
     vlmkit scan a11y ui.xml --density $(adb shell wm density | grep -o '[0-9]*$') --frame frame.png --out a11y.json
   Bounds become dp, the unit WCAG's target floors mean on Android.
 
-Any other platform (macOS AX, Windows UIA, iOS, a Flutter desktop semantics
-dump) writes the same JSON with its own tool — docs/a11y-tree.md has the
-contract. Then: vlmkit check a11y tree a11y.json`,
+  iOS Simulator (the app is relaunched with vlmkit's agent injected — no code
+  of vlmkit's in the app, no test target; docs/ios-simulator.md)
+    vlmkit scan a11y ios:dev.vlmkit.sample --out a11y.json
+    vlmkit scan a11y ios:dev.vlmkit.sample --tap "Open profile" --out profile.json
+    vlmkit scan a11y dump.json --frame frame.png --out a11y.json   # a saved --dump, no simulator
+  Rects are points; the 2x / 3x screenshot is read through \`scale\`.
+
+Any other platform (macOS AX, Windows UIA, a Flutter desktop semantics dump)
+writes the same JSON with its own tool — docs/a11y-tree.md has the contract.
+Then: vlmkit check a11y tree a11y.json`,
   rules: [
     { id: "redirected", title: "Requested URL redirected elsewhere", severity: "suspect" },
     {
@@ -83,7 +91,7 @@ contract. Then: vlmkit check a11y tree a11y.json`,
     },
   ],
   inputs: [
-    { name: "source", placeholder: "url|page.html|dump.xml", kind: "path-or-url", description: "Flutter web page, or a uiautomator dump", positional: 0, required: true },
+    { name: "source", placeholder: "url|page.html|dump.xml|ios:<bundle-id>", kind: "path-or-url", description: "Flutter web page, a uiautomator dump, an app on the booted iOS simulator, or a saved iOS dump", positional: 0, required: true },
     { name: "out", placeholder: "file", kind: "path", description: "Tree file to write", defaultDescription: DEFAULT_A11Y_TREE },
     {
       name: "frame", placeholder: "frame.png", kind: "path",
@@ -92,21 +100,26 @@ contract. Then: vlmkit check a11y tree a11y.json`,
     },
     { name: "viewport", placeholder: "WxH", kind: "string", description: "Page viewport", defaultDescription: "375x812" },
     { name: "click", placeholder: "name", kind: "string", repeatable: true, description: "Tap a node by its exact accessible name before collecting (page)" },
+    { name: "tap", placeholder: "name", kind: "string", repeatable: true, description: "iOS: tap a node by its exact accessible name before collecting (synthesized touch, hit-tested)" },
+    { name: "device", placeholder: "booted|udid|name", kind: "string", description: "iOS: the simulator to use", defaultDescription: "booted" },
+    { name: "dump", placeholder: "file", kind: "path", description: "iOS: also write the raw agent dump (a fixture that needs no simulator)" },
     { name: "locale", placeholder: "bcp47", kind: "string", description: "Page locale (pinned so the host's LANG cannot change the app)", defaultDescription: "en-US" },
     { name: "density", placeholder: "dpi", kind: "number", description: "Device dpi, required for a dump (adb shell wm density)" },
     { name: "storage-state", placeholder: "file", kind: "path", description: "Playwright storage state for pages behind a login" },
     ...PAGE_LOAD_INPUTS,
   ],
   parse: (argv) => {
-    const source = firstPositional(argv, "vlmkit scan a11y <url|page.html|dump.xml> [--out a11y.json]", [
-      "--out", "--frame", "--viewport", "--click", "--density", "--locale", "--storage-state",
+    const source = firstPositional(argv, "vlmkit scan a11y <url|page.html|dump.xml|ios:bundle-id> [--out a11y.json]", [
+      "--out", "--frame", "--viewport", "--click", "--tap", "--density", "--locale", "--storage-state", "--device", "--dump",
     ]);
     const densityRaw = readFlag(argv, "density");
     const density = densityRaw === undefined ? undefined : Number(densityRaw);
     if (density !== undefined && !(density > 0)) throw new UsageError(`--density expects the device dpi, got ${JSON.stringify(densityRaw)}.`);
     const frame = readFlag(argv, "frame");
     const viewport = viewportFlag(argv);
-    const clicks = readAll(argv, "click");
+    const clicks = [...readAll(argv, "click"), ...readAll(argv, "tap")];
+    const device = readFlag(argv, "device");
+    const dump = readFlag(argv, "dump");
     const storageState = readFlag(argv, "storage-state");
     const locale = readFlag(argv, "locale");
     return {
@@ -116,6 +129,8 @@ contract. Then: vlmkit check a11y tree a11y.json`,
       ...(frame ? { frame } : {}),
       ...(viewport ? { viewport } : {}),
       ...(clicks.length > 0 ? { clicks } : {}),
+      ...(device ? { device } : {}),
+      ...(dump ? { dump } : {}),
       ...(density !== undefined ? { density } : {}),
       ...(storageState ? { storageState } : {}),
       ...parsePageLoad(argv),

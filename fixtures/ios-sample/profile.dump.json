@@ -1,0 +1,2563 @@
+{
+ "app": {
+  "process": "VlmkitSample",
+  "system": "27.0",
+  "bundleId": "dev.vlmkit.sample",
+  "pid": 73019
+ },
+ "screen": {
+  "orientation": {
+   "y": 0,
+   "w": 402,
+   "x": 0,
+   "h": 874
+  },
+  "width": 402,
+  "height": 874,
+  "scale": 3
+ },
+ "windows": [
+  {
+   "cls": "UIWindow",
+   "opaque": true,
+   "frame": {
+    "y": 0,
+    "w": 402,
+    "x": 0,
+    "h": 874
+   },
+   "clips": 0,
+   "keyWindow": true,
+   "ax": {
+    "id": null,
+    "customActions": 0,
+    "label": null,
+    "traits": [],
+    "frame": {
+     "y": 0,
+     "w": 402,
+     "x": 0,
+     "h": 874
+    },
+    "interactive": true,
+    "element": false,
+    "traitsRaw": 0,
+    "value": null,
+    "hidden": false,
+    "hint": null,
+    "activation": {
+     "x": 201,
+     "y": 437
+    },
+    "modal": false
+   },
+   "axElements": [],
+   "interaction": true,
+   "bg": null,
+   "alpha": 1,
+   "children": [
+    {
+     "cls": "UITransitionView",
+     "opaque": true,
+     "frame": {
+      "y": 0,
+      "w": 402,
+      "x": 0,
+      "h": 874
+     },
+     "clips": 0,
+     "ax": {
+      "id": null,
+      "customActions": 0,
+      "label": null,
+      "traits": [],
+      "frame": {
+       "y": 0,
+       "w": 402,
+       "x": 0,
+       "h": 874
+      },
+      "interactive": true,
+      "element": false,
+      "traitsRaw": 0,
+      "value": null,
+      "hidden": false,
+      "hint": null,
+      "activation": {
+       "x": 201,
+       "y": 437
+      },
+      "modal": false
+     },
+     "axElements": [],
+     "interaction": true,
+     "bg": null,
+     "alpha": 1,
+     "children": [
+      {
+       "cls": "UIDropShadowView",
+       "opaque": true,
+       "frame": {
+        "y": 0,
+        "w": 402,
+        "x": 0,
+        "h": 874
+       },
+       "clips": 0,
+       "ax": {
+        "id": null,
+        "customActions": 0,
+        "label": null,
+        "traits": [],
+        "frame": {
+         "y": 0,
+         "w": 402,
+         "x": 0,
+         "h": 874
+        },
+        "interactive": true,
+        "element": false,
+        "traitsRaw": 0,
+        "value": null,
+        "hidden": false,
+        "hint": null,
+        "activation": {
+         "x": 201,
+         "y": 437
+        },
+        "modal": false
+       },
+       "axElements": [],
+       "interaction": true,
+       "bg": null,
+       "alpha": 1,
+       "children": [
+        {
+         "cls": "UILayoutContainerView",
+         "opaque": true,
+         "frame": {
+          "y": 0,
+          "w": 402,
+          "x": 0,
+          "h": 874
+         },
+         "clips": 1,
+         "ax": {
+          "id": null,
+          "customActions": 0,
+          "label": null,
+          "traits": [],
+          "frame": {
+           "y": 0,
+           "w": 402,
+           "x": 0,
+           "h": 874
+          },
+          "interactive": true,
+          "element": false,
+          "traitsRaw": 0,
+          "value": null,
+          "hidden": false,
+          "hint": null,
+          "activation": {
+           "x": 201,
+           "y": 437
+          },
+          "modal": false
+         },
+         "axElements": [],
+         "interaction": true,
+         "bg": null,
+         "alpha": 1,
+         "children": [
+          {
+           "cls": "UINavigationTransitionView",
+           "opaque": true,
+           "frame": {
+            "y": 0,
+            "w": 402,
+            "x": 0,
+            "h": 874
+           },
+           "clips": 0,
+           "ax": {
+            "id": null,
+            "customActions": 0,
+            "label": null,
+            "traits": [],
+            "frame": {
+             "y": 0,
+             "w": 402,
+             "x": 0,
+             "h": 874
+            },
+            "interactive": true,
+            "element": false,
+            "traitsRaw": 0,
+            "value": null,
+            "hidden": false,
+            "hint": null,
+            "activation": {
+             "x": 201,
+             "y": 437
+            },
+            "modal": false
+           },
+           "axElements": [],
+           "interaction": true,
+           "bg": null,
+           "alpha": 1,
+           "children": [
+            {
+             "cls": "UIViewControllerWrapperView",
+             "opaque": true,
+             "frame": {
+              "y": 0,
+              "w": 402,
+              "x": 0,
+              "h": 874
+             },
+             "clips": 0,
+             "ax": {
+              "id": null,
+              "customActions": 0,
+              "label": null,
+              "traits": [],
+              "frame": {
+               "y": 0,
+               "w": 402,
+               "x": 0,
+               "h": 874
+              },
+              "interactive": true,
+              "element": false,
+              "traitsRaw": 0,
+              "value": null,
+              "hidden": false,
+              "hint": null,
+              "activation": {
+               "x": 201,
+               "y": 437
+              },
+              "modal": false
+             },
+             "axElements": [],
+             "interaction": true,
+             "bg": null,
+             "alpha": 1,
+             "children": [
+              {
+               "cls": "_TtGC7SwiftUI14_UIHostingViewV12VlmkitSample11ProfileView_",
+               "opaque": true,
+               "frame": {
+                "y": 0,
+                "w": 402,
+                "x": 0,
+                "h": 874
+               },
+               "clips": 0,
+               "ax": {
+                "id": null,
+                "customActions": 0,
+                "label": null,
+                "traits": [],
+                "frame": {
+                 "y": 0,
+                 "w": 402,
+                 "x": 0,
+                 "h": 874
+                },
+                "interactive": true,
+                "element": false,
+                "traitsRaw": 0,
+                "value": null,
+                "hidden": false,
+                "hint": null,
+                "activation": {
+                 "x": 201,
+                 "y": 437
+                },
+                "modal": false
+               },
+               "axElements": [
+                {
+                 "axElements": [],
+                 "kind": "ax",
+                 "cls": "SwiftUI.AccessibilityNode",
+                 "ax": {
+                  "id": null,
+                  "customActions": 0,
+                  "label": "Profile",
+                  "traits": [
+                   "header",
+                   "staticText"
+                  ],
+                  "frame": {
+                   "y": 132,
+                   "w": 85,
+                   "x": 16,
+                   "h": 33.67
+                  },
+                  "interactive": false,
+                  "element": true,
+                  "traitsRaw": 65600,
+                  "value": null,
+                  "hidden": false,
+                  "hint": null,
+                  "activation": {
+                   "x": 58.5,
+                   "y": 148.83
+                  },
+                  "modal": false
+                 }
+                },
+                {
+                 "cls": "SwiftUI.UIKitTextField",
+                 "font": {
+                  "name": ".SFUI-Regular",
+                  "size": 17,
+                  "weight": 400
+                 },
+                 "opaque": false,
+                 "control": {
+                  "enabled": true,
+                  "selected": false,
+                  "highlighted": false
+                 },
+                 "frame": {
+                  "y": 181.67,
+                  "w": 370,
+                  "x": 16,
+                  "h": 34
+                 },
+                 "secure": false,
+                 "clips": 0,
+                 "textColor": "rgba(0,0,0,1.000)",
+                 "ax": {
+                  "id": null,
+                  "customActions": 0,
+                  "label": null,
+                  "traits": [],
+                  "frame": {
+                   "y": 181.67,
+                   "w": 370,
+                   "x": 16,
+                   "h": 34
+                  },
+                  "interactive": true,
+                  "element": true,
+                  "traitsRaw": 262144,
+                  "value": "Ada",
+                  "hidden": false,
+                  "hint": null,
+                  "activation": {
+                   "x": 201,
+                   "y": 198.67
+                  },
+                  "modal": false
+                 },
+                 "axElements": [],
+                 "interaction": true,
+                 "bg": null,
+                 "alpha": 1,
+                 "text": "Ada",
+                 "hidden": false,
+                 "placeholder": "Name",
+                 "kind": "view",
+                 "children": [
+                  {
+                   "cls": "_UITextFieldRoundedRectBackgroundViewNeue",
+                   "borderColor": "rgba(0,0,0,0.200)",
+                   "opaque": false,
+                   "frame": {
+                    "y": 181.67,
+                    "w": 370,
+                    "x": 16,
+                    "h": 34
+                   },
+                   "clips": 0,
+                   "ax": {
+                    "id": null,
+                    "customActions": 0,
+                    "label": null,
+                    "traits": [],
+                    "frame": {
+                     "y": 181.67,
+                     "w": 370,
+                     "x": 16,
+                     "h": 34
+                    },
+                    "interactive": true,
+                    "element": false,
+                    "traitsRaw": 0,
+                    "value": null,
+                    "hidden": false,
+                    "hint": null,
+                    "activation": {
+                     "x": 201,
+                     "y": 198.67
+                    },
+                    "modal": false
+                   },
+                   "axElements": [],
+                   "interaction": false,
+                   "bg": "rgba(255,255,255,1.000)",
+                   "border": 0.33,
+                   "alpha": 1,
+                   "corner": 5,
+                   "hidden": false,
+                   "children": [],
+                   "kind": "view"
+                  },
+                  {
+                   "cls": "_UITouchPassthroughView",
+                   "opaque": true,
+                   "frame": {
+                    "y": 181.67,
+                    "w": 356,
+                    "x": 16,
+                    "h": 30
+                   },
+                   "clips": 0,
+                   "ax": {
+                    "id": null,
+                    "customActions": 0,
+                    "label": null,
+                    "traits": [],
+                    "frame": {
+                     "y": 181.67,
+                     "w": 356,
+                     "x": 16,
+                     "h": 30
+                    },
+                    "interactive": true,
+                    "element": false,
+                    "traitsRaw": 0,
+                    "value": null,
+                    "hidden": false,
+                    "hint": null,
+                    "activation": {
+                     "x": 194,
+                     "y": 196.67
+                    },
+                    "modal": false
+                   },
+                   "axElements": [],
+                   "interaction": true,
+                   "bg": null,
+                   "alpha": 1,
+                   "children": [],
+                   "hidden": false,
+                   "kind": "view"
+                  },
+                  {
+                   "cls": "_UITextLayoutCanvasView",
+                   "opaque": true,
+                   "frame": {
+                    "y": 183.67,
+                    "w": 356,
+                    "x": 23,
+                    "h": 30
+                   },
+                   "clips": 0,
+                   "ax": {
+                    "id": null,
+                    "customActions": 0,
+                    "label": null,
+                    "traits": [],
+                    "frame": {
+                     "y": 183.67,
+                     "w": 356,
+                     "x": 23,
+                     "h": 30
+                    },
+                    "interactive": true,
+                    "element": false,
+                    "traitsRaw": 0,
+                    "value": null,
+                    "hidden": false,
+                    "hint": null,
+                    "activation": {
+                     "x": 201,
+                     "y": 198.67
+                    },
+                    "modal": false
+                   },
+                   "axElements": [],
+                   "interaction": true,
+                   "bg": null,
+                   "alpha": 1,
+                   "children": [
+                    {
+                     "cls": "_UITextLayoutFragmentView",
+                     "opaque": false,
+                     "frame": {
+                      "y": 187.67,
+                      "w": 83,
+                      "x": 12,
+                      "h": 22.33
+                     },
+                     "clips": 0,
+                     "ax": {
+                      "id": null,
+                      "customActions": 0,
+                      "label": null,
+                      "traits": [],
+                      "frame": {
+                       "y": 187.67,
+                       "w": 83,
+                       "x": 12,
+                       "h": 22.33
+                      },
+                      "interactive": true,
+                      "element": false,
+                      "traitsRaw": 0,
+                      "value": null,
+                      "hidden": false,
+                      "hint": null,
+                      "activation": {
+                       "x": 53.5,
+                       "y": 198.83
+                      },
+                      "modal": false
+                     },
+                     "axElements": [],
+                     "interaction": true,
+                     "bg": null,
+                     "alpha": 1,
+                     "children": [],
+                     "hidden": false,
+                     "kind": "view"
+                    }
+                   ],
+                   "hidden": false,
+                   "kind": "view"
+                  }
+                 ],
+                 "borderStyle": 3
+                },
+                {
+                 "axElements": [],
+                 "kind": "ax",
+                 "cls": "SwiftUI.AccessibilityNode",
+                 "ax": {
+                  "id": null,
+                  "customActions": 0,
+                  "label": "Dark mode",
+                  "traits": [
+                   "button",
+                   "toggleButton"
+                  ],
+                  "frame": {
+                   "y": 231.67,
+                   "w": 370,
+                   "x": 16,
+                   "h": 28
+                  },
+                  "interactive": true,
+                  "element": true,
+                  "traitsRaw": 9007199254740992,
+                  "value": "0",
+                  "hidden": false,
+                  "hint": null,
+                  "activation": {
+                   "x": 356.5,
+                   "y": 245.67
+                  },
+                  "modal": false
+                 }
+                },
+                {
+                 "axElements": [],
+                 "kind": "ax",
+                 "cls": "SwiftUI.AccessibilityNode",
+                 "ax": {
+                  "id": null,
+                  "customActions": 0,
+                  "label": "Save",
+                  "traits": [
+                   "button"
+                  ],
+                  "frame": {
+                   "y": 280.33,
+                   "w": 61,
+                   "x": 16,
+                   "h": 34.33
+                  },
+                  "interactive": true,
+                  "element": true,
+                  "traitsRaw": 1,
+                  "value": null,
+                  "hidden": false,
+                  "hint": null,
+                  "activation": {
+                   "x": 46.5,
+                   "y": 297.5
+                  },
+                  "modal": false
+                 }
+                },
+                {
+                 "axElements": [],
+                 "kind": "ax",
+                 "cls": "SwiftUI.AccessibilityNode",
+                 "ax": {
+                  "id": null,
+                  "customActions": 0,
+                  "label": "Tiny",
+                  "traits": [
+                   "button"
+                  ],
+                  "frame": {
+                   "y": 291.67,
+                   "w": 17.33,
+                   "x": 78.33,
+                   "h": 12
+                  },
+                  "interactive": true,
+                  "element": true,
+                  "traitsRaw": 1,
+                  "value": null,
+                  "hidden": false,
+                  "hint": null,
+                  "activation": {
+                   "x": 87,
+                   "y": 297.67
+                  },
+                  "modal": false
+                 }
+                },
+                {
+                 "axElements": [],
+                 "kind": "ax",
+                 "cls": "SwiftUI.AccessibilityNode",
+                 "ax": {
+                  "id": null,
+                  "customActions": 0,
+                  "label": null,
+                  "traits": [
+                   "button"
+                  ],
+                  "frame": {
+                   "y": 285.67,
+                   "w": 24,
+                   "x": 119,
+                   "h": 24
+                  },
+                  "interactive": true,
+                  "element": true,
+                  "traitsRaw": 1,
+                  "value": null,
+                  "hidden": false,
+                  "hint": null,
+                  "activation": {
+                   "x": 131,
+                   "y": 297.67
+                  },
+                  "modal": false
+                 }
+                }
+               ],
+               "interaction": true,
+               "bg": "rgba(255,255,255,1.000)",
+               "alpha": 1,
+               "children": [
+                {
+                 "cls": "_TtGC7SwiftUI21UIKitPlatformViewHostGVS_P10$1ca679b2832PlatformViewRepresentableAdaptorVS_P10$1ca6358ec24PlatformTextFieldAdaptor__",
+                 "opaque": true,
+                 "frame": {
+                  "y": 181.67,
+                  "w": 370,
+                  "x": 16,
+                  "h": 34
+                 },
+                 "clips": 0,
+                 "ax": {
+                  "id": null,
+                  "customActions": 0,
+                  "label": null,
+                  "traits": [],
+                  "frame": {
+                   "y": 181.67,
+                   "w": 370,
+                   "x": 16,
+                   "h": 34
+                  },
+                  "interactive": true,
+                  "element": false,
+                  "traitsRaw": 0,
+                  "value": null,
+                  "hidden": false,
+                  "hint": null,
+                  "activation": {
+                   "x": 201,
+                   "y": 198.67
+                  },
+                  "modal": false
+                 },
+                 "axElements": [],
+                 "interaction": true,
+                 "bg": null,
+                 "alpha": 1,
+                 "children": [],
+                 "hidden": false,
+                 "kind": "view"
+                },
+                {
+                 "cls": "_TtGC7SwiftUI21UIKitPlatformViewHostGVS_P10$1ca679b2832PlatformViewRepresentableAdaptorVS_P10$1ca681ff86Switch__",
+                 "opaque": true,
+                 "frame": {
+                  "y": 231.67,
+                  "w": 61,
+                  "x": 325,
+                  "h": 28
+                 },
+                 "clips": 0,
+                 "ax": {
+                  "id": null,
+                  "customActions": 0,
+                  "label": null,
+                  "traits": [],
+                  "frame": {
+                   "y": 231.67,
+                   "w": 61,
+                   "x": 325,
+                   "h": 28
+                  },
+                  "interactive": true,
+                  "element": false,
+                  "traitsRaw": 0,
+                  "value": null,
+                  "hidden": false,
+                  "hint": null,
+                  "activation": {
+                   "x": 355.5,
+                   "y": 245.67
+                  },
+                  "modal": false
+                 },
+                 "axElements": [],
+                 "interaction": true,
+                 "bg": null,
+                 "alpha": 1,
+                 "children": [
+                  {
+                   "cls": "UISwitch",
+                   "opaque": true,
+                   "control": {
+                    "enabled": true,
+                    "selected": false,
+                    "highlighted": false
+                   },
+                   "frame": {
+                    "y": 231.67,
+                    "w": 63,
+                    "x": 325,
+                    "h": 28
+                   },
+                   "clips": 0,
+                   "on": false,
+                   "ax": {
+                    "id": null,
+                    "customActions": 0,
+                    "label": null,
+                    "traits": [
+                     "button",
+                     "toggleButton"
+                    ],
+                    "frame": {
+                     "y": 231.67,
+                     "w": 63,
+                     "x": 325,
+                     "h": 28
+                    },
+                    "interactive": true,
+                    "element": true,
+                    "traitsRaw": 9007199254740992,
+                    "value": "0",
+                    "hidden": false,
+                    "hint": null,
+                    "activation": {
+                     "x": 356.5,
+                     "y": 245.67
+                    },
+                    "modal": false
+                   },
+                   "axElements": [],
+                   "interaction": true,
+                   "bg": null,
+                   "alpha": 1,
+                   "children": [
+                    {
+                     "cls": "UISwitchModernVisualElement",
+                     "opaque": true,
+                     "frame": {
+                      "y": 231.67,
+                      "w": 63,
+                      "x": 325,
+                      "h": 28
+                     },
+                     "clips": 0,
+                     "ax": {
+                      "id": null,
+                      "customActions": 0,
+                      "label": null,
+                      "traits": [],
+                      "frame": {
+                       "y": 231.67,
+                       "w": 63,
+                       "x": 325,
+                       "h": 28
+                      },
+                      "interactive": true,
+                      "element": false,
+                      "traitsRaw": 0,
+                      "value": null,
+                      "hidden": false,
+                      "hint": null,
+                      "activation": {
+                       "x": 356.5,
+                       "y": 245.67
+                      },
+                      "modal": false
+                     },
+                     "axElements": [],
+                     "interaction": true,
+                     "bg": null,
+                     "alpha": 1,
+                     "children": [
+                      {
+                       "cls": "UIView",
+                       "opaque": true,
+                       "frame": {
+                        "y": 231.67,
+                        "w": 63,
+                        "x": 325,
+                        "h": 28
+                       },
+                       "clips": 0,
+                       "ax": {
+                        "id": null,
+                        "customActions": 0,
+                        "label": null,
+                        "traits": [],
+                        "frame": {
+                         "y": 231.67,
+                         "w": 63,
+                         "x": 325,
+                         "h": 28
+                        },
+                        "interactive": true,
+                        "element": false,
+                        "traitsRaw": 0,
+                        "value": null,
+                        "hidden": false,
+                        "hint": null,
+                        "activation": {
+                         "x": 356.5,
+                         "y": 245.67
+                        },
+                        "modal": false
+                       },
+                       "axElements": [],
+                       "interaction": true,
+                       "bg": "rgba(60,60,67,0.298)",
+                       "alpha": 1,
+                       "corner": 14,
+                       "hidden": false,
+                       "children": [],
+                       "kind": "view"
+                      },
+                      {
+                       "cls": "UIView",
+                       "opaque": true,
+                       "frame": {
+                        "y": 231.67,
+                        "w": 63,
+                        "x": 325,
+                        "h": 28
+                       },
+                       "clips": 0,
+                       "ax": {
+                        "id": null,
+                        "customActions": 0,
+                        "label": null,
+                        "traits": [],
+                        "frame": {
+                         "y": 231.67,
+                         "w": 63,
+                         "x": 325,
+                         "h": 28
+                        },
+                        "interactive": true,
+                        "element": false,
+                        "traitsRaw": 0,
+                        "value": null,
+                        "hidden": false,
+                        "hint": null,
+                        "activation": {
+                         "x": 356.5,
+                         "y": 245.67
+                        },
+                        "modal": false
+                       },
+                       "axElements": [],
+                       "interaction": true,
+                       "bg": null,
+                       "alpha": 1,
+                       "corner": 14,
+                       "hidden": false,
+                       "children": [
+                        {
+                         "cls": "UIImageView",
+                         "opaque": false,
+                         "frame": {
+                          "y": 231.67,
+                          "w": 630,
+                          "x": -242,
+                          "h": 31
+                         },
+                         "clips": 0,
+                         "ax": {
+                          "id": null,
+                          "customActions": 0,
+                          "label": null,
+                          "traits": [
+                           "image"
+                          ],
+                          "frame": {
+                           "y": 231.67,
+                           "w": 630,
+                           "x": -242,
+                           "h": 31
+                          },
+                          "interactive": false,
+                          "element": false,
+                          "traitsRaw": 4,
+                          "value": null,
+                          "hidden": true,
+                          "hint": null,
+                          "activation": {
+                           "x": 73,
+                           "y": 247.17
+                          },
+                          "modal": false
+                         },
+                         "axElements": [],
+                         "interaction": false,
+                         "bg": null,
+                         "image": {
+                          "y": 0,
+                          "w": 630,
+                          "x": 0,
+                          "h": 1
+                         },
+                         "alpha": 1,
+                         "children": [],
+                         "hidden": true,
+                         "kind": "view"
+                        },
+                        {
+                         "cls": "UIView",
+                         "opaque": true,
+                         "frame": {
+                          "y": 231.67,
+                          "w": 63,
+                          "x": 325,
+                          "h": 28
+                         },
+                         "clips": 0,
+                         "ax": {
+                          "id": null,
+                          "customActions": 0,
+                          "label": null,
+                          "traits": [],
+                          "frame": {
+                           "y": 231.67,
+                           "w": 63,
+                           "x": 325,
+                           "h": 28
+                          },
+                          "interactive": true,
+                          "element": false,
+                          "traitsRaw": 0,
+                          "value": null,
+                          "hidden": false,
+                          "hint": null,
+                          "activation": {
+                           "x": 356.5,
+                           "y": 245.67
+                          },
+                          "modal": false
+                         },
+                         "axElements": [],
+                         "interaction": true,
+                         "bg": null,
+                         "alpha": 1,
+                         "children": [
+                          {
+                           "cls": "UIImageView",
+                           "opaque": true,
+                           "frame": {
+                            "y": 245.67,
+                            "w": 0,
+                            "x": 373,
+                            "h": 0
+                           },
+                           "clips": 0,
+                           "ax": {
+                            "id": null,
+                            "customActions": 0,
+                            "label": null,
+                            "traits": [
+                             "image"
+                            ],
+                            "frame": {
+                             "y": 245.67,
+                             "w": 0,
+                             "x": 373,
+                             "h": 0
+                            },
+                            "interactive": false,
+                            "element": false,
+                            "traitsRaw": 4,
+                            "value": null,
+                            "hidden": false,
+                            "hint": null,
+                            "activation": {
+                             "x": 373,
+                             "y": 245.67
+                            },
+                            "modal": false
+                           },
+                           "axElements": [],
+                           "interaction": false,
+                           "bg": null,
+                           "image": null,
+                           "alpha": 1,
+                           "children": [],
+                           "hidden": false,
+                           "kind": "view"
+                          },
+                          {
+                           "cls": "UIImageView",
+                           "opaque": true,
+                           "frame": {
+                            "y": 245.67,
+                            "w": 0,
+                            "x": 340,
+                            "h": 0
+                           },
+                           "clips": 0,
+                           "ax": {
+                            "id": null,
+                            "customActions": 0,
+                            "label": null,
+                            "traits": [
+                             "image"
+                            ],
+                            "frame": {
+                             "y": 245.67,
+                             "w": 0,
+                             "x": 340,
+                             "h": 0
+                            },
+                            "interactive": false,
+                            "element": false,
+                            "traitsRaw": 4,
+                            "value": null,
+                            "hidden": false,
+                            "hint": null,
+                            "activation": {
+                             "x": 340,
+                             "y": 245.67
+                            },
+                            "modal": false
+                           },
+                           "axElements": [],
+                           "interaction": false,
+                           "bg": null,
+                           "image": null,
+                           "alpha": 0,
+                           "children": [],
+                           "hidden": false,
+                           "kind": "view"
+                          }
+                         ],
+                         "hidden": false,
+                         "kind": "view"
+                        }
+                       ],
+                       "kind": "view"
+                      },
+                      {
+                       "cls": "_UILiquidLensView",
+                       "opaque": true,
+                       "frame": {
+                        "y": 233.67,
+                        "w": 37,
+                        "x": 327,
+                        "h": 24
+                       },
+                       "clips": 0,
+                       "ax": {
+                        "id": null,
+                        "customActions": 0,
+                        "label": null,
+                        "traits": [],
+                        "frame": {
+                         "y": 233.67,
+                         "w": 37,
+                         "x": 327,
+                         "h": 24
+                        },
+                        "interactive": true,
+                        "element": false,
+                        "traitsRaw": 0,
+                        "value": null,
+                        "hidden": false,
+                        "hint": null,
+                        "activation": {
+                         "x": 345.5,
+                         "y": 245.67
+                        },
+                        "modal": false
+                       },
+                       "axElements": [],
+                       "interaction": true,
+                       "bg": null,
+                       "alpha": 1,
+                       "children": [
+                        {
+                         "cls": "UIView",
+                         "opaque": true,
+                         "frame": {
+                          "y": 233.67,
+                          "w": 37,
+                          "x": 327,
+                          "h": 24
+                         },
+                         "clips": 0,
+                         "ax": {
+                          "id": null,
+                          "customActions": 0,
+                          "label": null,
+                          "traits": [],
+                          "frame": {
+                           "y": 233.67,
+                           "w": 37,
+                           "x": 327,
+                           "h": 24
+                          },
+                          "interactive": true,
+                          "element": false,
+                          "traitsRaw": 0,
+                          "value": null,
+                          "hidden": false,
+                          "hint": null,
+                          "activation": {
+                           "x": 345.5,
+                           "y": 245.67
+                          },
+                          "modal": false
+                         },
+                         "axElements": [],
+                         "interaction": false,
+                         "bg": null,
+                         "alpha": 1,
+                         "children": [
+                          {
+                           "cls": "UIView",
+                           "opaque": true,
+                           "frame": {
+                            "y": 233.67,
+                            "w": 37,
+                            "x": 327,
+                            "h": 24
+                           },
+                           "clips": 0,
+                           "ax": {
+                            "id": null,
+                            "customActions": 0,
+                            "label": null,
+                            "traits": [],
+                            "frame": {
+                             "y": 233.67,
+                             "w": 37,
+                             "x": 327,
+                             "h": 24
+                            },
+                            "interactive": true,
+                            "element": false,
+                            "traitsRaw": 0,
+                            "value": null,
+                            "hidden": false,
+                            "hint": null,
+                            "activation": {
+                             "x": 345.5,
+                             "y": 245.67
+                            },
+                            "modal": false
+                           },
+                           "axElements": [],
+                           "interaction": false,
+                           "bg": "rgba(255,255,255,1.000)",
+                           "alpha": 1,
+                           "children": [],
+                           "hidden": false,
+                           "kind": "view"
+                          }
+                         ],
+                         "hidden": false,
+                         "kind": "view"
+                        }
+                       ],
+                       "hidden": false,
+                       "kind": "view"
+                      }
+                     ],
+                     "hidden": false,
+                     "kind": "view"
+                    }
+                   ],
+                   "hidden": false,
+                   "kind": "view"
+                  }
+                 ],
+                 "hidden": false,
+                 "kind": "view"
+                }
+               ],
+               "hidden": false,
+               "kind": "view"
+              }
+             ],
+             "hidden": false,
+             "kind": "view"
+            }
+           ],
+           "hidden": false,
+           "kind": "view"
+          },
+          {
+           "cls": "UINavigationBar",
+           "opaque": false,
+           "frame": {
+            "y": 62,
+            "w": 402,
+            "x": 0,
+            "h": 54
+           },
+           "clips": 0,
+           "ax": {
+            "id": "Profile",
+            "customActions": 0,
+            "label": null,
+            "traits": [],
+            "frame": {
+             "y": 62,
+             "w": 402,
+             "x": 0,
+             "h": 54
+            },
+            "interactive": true,
+            "element": false,
+            "traitsRaw": 0,
+            "value": null,
+            "containerType": 4,
+            "hidden": false,
+            "hint": null,
+            "activation": {
+             "x": 201,
+             "y": 89
+            },
+            "modal": false
+           },
+           "axElements": [
+            {
+             "axElements": [],
+             "kind": "ax",
+             "cls": "UIAccessibilityBackButtonElement",
+             "ax": {
+              "id": "BackButton",
+              "customActions": 0,
+              "label": "Settings",
+              "traits": [
+               "button"
+              ],
+              "frame": {
+               "y": 62,
+               "w": 44,
+               "x": 16,
+               "h": 44
+              },
+              "interactive": true,
+              "element": true,
+              "traitsRaw": 134217729,
+              "value": null,
+              "hidden": false,
+              "hint": null,
+              "activation": {
+               "x": 38,
+               "y": 84
+              },
+              "modal": false
+             }
+            },
+            {
+             "opaque": true,
+             "cls": "UILabel",
+             "frame": {
+              "y": 73.67,
+              "w": 51.67,
+              "x": 175,
+              "h": 20.67
+             },
+             "hidden": false,
+             "textColor": "rgba(0,0,0,1.000)",
+             "ax": {
+              "id": null,
+              "customActions": 0,
+              "label": "Profile",
+              "traits": [
+               "header"
+              ],
+              "frame": {
+               "y": 73.67,
+               "w": 51.67,
+               "x": 175,
+               "h": 20.67
+              },
+              "interactive": false,
+              "element": true,
+              "traitsRaw": 65536,
+              "value": null,
+              "hidden": false,
+              "hint": null,
+              "activation": {
+               "x": 200.83,
+               "y": 84
+              },
+              "modal": false
+             },
+             "lines": 1,
+             "kind": "view",
+             "axElements": [],
+             "interaction": false,
+             "textFits": {
+              "y": 0,
+              "w": 51.67,
+              "x": 0,
+              "h": 20.33
+             },
+             "children": [],
+             "bg": "rgba(0,0,0,0.000)",
+             "font": {
+              "name": ".SFUI-Semibold",
+              "size": 17,
+              "weight": 700
+             },
+             "alpha": 1,
+             "clips": 0,
+             "text": "Profile",
+             "textIntrinsic": {
+              "y": 0,
+              "w": 51.67,
+              "x": 0,
+              "h": 20.33
+             },
+             "textAlign": 4,
+             "lineBreak": 4
+            }
+           ],
+           "interaction": true,
+           "bg": null,
+           "alpha": 1,
+           "children": [
+            {
+             "cls": "_UIBarBackground",
+             "opaque": true,
+             "frame": {
+              "y": 0,
+              "w": 402,
+              "x": 0,
+              "h": 116
+             },
+             "clips": 0,
+             "ax": {
+              "id": null,
+              "customActions": 0,
+              "label": null,
+              "traits": [],
+              "frame": {
+               "y": 0,
+               "w": 402,
+               "x": 0,
+               "h": 116
+              },
+              "interactive": true,
+              "element": false,
+              "traitsRaw": 0,
+              "value": null,
+              "hidden": true,
+              "hint": null,
+              "activation": {
+               "x": 201,
+               "y": 58
+              },
+              "modal": false
+             },
+             "axElements": [],
+             "interaction": false,
+             "bg": null,
+             "alpha": 1,
+             "children": [],
+             "hidden": false,
+             "kind": "view"
+            },
+            {
+             "cls": "UIKit.NavigationBarContentView",
+             "opaque": true,
+             "frame": {
+              "y": 62,
+              "w": 402,
+              "x": 0,
+              "h": 54
+             },
+             "clips": 0,
+             "ax": {
+              "id": null,
+              "customActions": 0,
+              "label": null,
+              "traits": [],
+              "frame": {
+               "y": 62,
+               "w": 402,
+               "x": 0,
+               "h": 54
+              },
+              "interactive": true,
+              "element": false,
+              "traitsRaw": 0,
+              "value": null,
+              "hidden": false,
+              "hint": null,
+              "activation": {
+               "x": 201,
+               "y": 89
+              },
+              "modal": false
+             },
+             "axElements": [],
+             "interaction": true,
+             "bg": null,
+             "alpha": 1,
+             "children": [
+              {
+               "cls": "UIKit.NavigationBarTransitionContainer",
+               "opaque": true,
+               "frame": {
+                "y": 62,
+                "w": 402,
+                "x": 0,
+                "h": 54
+               },
+               "clips": 0,
+               "ax": {
+                "id": null,
+                "customActions": 0,
+                "label": null,
+                "traits": [],
+                "frame": {
+                 "y": 62,
+                 "w": 402,
+                 "x": 0,
+                 "h": 54
+                },
+                "interactive": true,
+                "element": false,
+                "traitsRaw": 0,
+                "value": null,
+                "hidden": false,
+                "hint": null,
+                "activation": {
+                 "x": 201,
+                 "y": 89
+                },
+                "modal": false
+               },
+               "axElements": [],
+               "interaction": true,
+               "bg": null,
+               "alpha": 1,
+               "children": [
+                {
+                 "cls": "_UINavigationBarHostedViewContainer",
+                 "opaque": true,
+                 "frame": {
+                  "y": 62,
+                  "w": 402,
+                  "x": 0,
+                  "h": 54
+                 },
+                 "clips": 0,
+                 "ax": {
+                  "id": null,
+                  "customActions": 0,
+                  "label": null,
+                  "traits": [],
+                  "frame": {
+                   "y": 62,
+                   "w": 402,
+                   "x": 0,
+                   "h": 54
+                  },
+                  "interactive": true,
+                  "element": false,
+                  "traitsRaw": 0,
+                  "value": null,
+                  "hidden": false,
+                  "hint": null,
+                  "activation": {
+                   "x": 201,
+                   "y": 89
+                  },
+                  "modal": false
+                 },
+                 "axElements": [],
+                 "interaction": true,
+                 "bg": null,
+                 "alpha": 1,
+                 "children": [
+                  {
+                   "cls": "_UINavigationBarHostedViewWrapper",
+                   "opaque": true,
+                   "frame": {
+                    "y": 73.67,
+                    "w": 52,
+                    "x": 175,
+                    "h": 20.67
+                   },
+                   "clips": 0,
+                   "ax": {
+                    "id": null,
+                    "customActions": 0,
+                    "label": null,
+                    "traits": [],
+                    "frame": {
+                     "y": 73.67,
+                     "w": 52,
+                     "x": 175,
+                     "h": 20.67
+                    },
+                    "interactive": true,
+                    "element": false,
+                    "traitsRaw": 0,
+                    "value": null,
+                    "hidden": false,
+                    "hint": null,
+                    "activation": {
+                     "x": 201,
+                     "y": 84
+                    },
+                    "modal": false
+                   },
+                   "axElements": [],
+                   "interaction": true,
+                   "bg": null,
+                   "alpha": 1,
+                   "children": [
+                    {
+                     "cls": "_UINavigationBarTitleControl",
+                     "opaque": true,
+                     "control": {
+                      "enabled": true,
+                      "selected": false,
+                      "highlighted": false
+                     },
+                     "frame": {
+                      "y": 73.67,
+                      "w": 52,
+                      "x": 175,
+                      "h": 20.67
+                     },
+                     "clips": 0,
+                     "ax": {
+                      "id": null,
+                      "customActions": 0,
+                      "label": null,
+                      "traits": [],
+                      "frame": {
+                       "y": 73.67,
+                       "w": 52,
+                       "x": 175,
+                       "h": 20.67
+                      },
+                      "interactive": true,
+                      "element": false,
+                      "traitsRaw": 0,
+                      "value": null,
+                      "hidden": false,
+                      "hint": null,
+                      "activation": {
+                       "x": 201,
+                       "y": 84
+                      },
+                      "modal": false
+                     },
+                     "axElements": [],
+                     "interaction": true,
+                     "bg": null,
+                     "alpha": 1,
+                     "children": [
+                      {
+                       "cls": "_UIIntrinsicContentSizeInvalidationForwardingWrapperView",
+                       "opaque": true,
+                       "frame": {
+                        "y": 73.67,
+                        "w": 52,
+                        "x": 175,
+                        "h": 20.67
+                       },
+                       "clips": 0,
+                       "ax": {
+                        "id": null,
+                        "customActions": 0,
+                        "label": null,
+                        "traits": [],
+                        "frame": {
+                         "y": 73.67,
+                         "w": 52,
+                         "x": 175,
+                         "h": 20.67
+                        },
+                        "interactive": true,
+                        "element": false,
+                        "traitsRaw": 0,
+                        "value": null,
+                        "hidden": false,
+                        "hint": null,
+                        "activation": {
+                         "x": 201,
+                         "y": 84
+                        },
+                        "modal": false
+                       },
+                       "axElements": [],
+                       "interaction": true,
+                       "bg": null,
+                       "alpha": 1,
+                       "children": [],
+                       "hidden": false,
+                       "kind": "view"
+                      }
+                     ],
+                     "hidden": false,
+                     "kind": "view"
+                    }
+                   ],
+                   "hidden": false,
+                   "kind": "view"
+                  }
+                 ],
+                 "hidden": false,
+                 "kind": "view"
+                },
+                {
+                 "cls": "UIView",
+                 "opaque": true,
+                 "frame": {
+                  "y": 62,
+                  "w": 402,
+                  "x": 0,
+                  "h": 54
+                 },
+                 "clips": 0,
+                 "ax": {
+                  "id": null,
+                  "customActions": 0,
+                  "label": null,
+                  "traits": [],
+                  "frame": {
+                   "y": 62,
+                   "w": 402,
+                   "x": 0,
+                   "h": 54
+                  },
+                  "interactive": true,
+                  "element": false,
+                  "traitsRaw": 0,
+                  "value": null,
+                  "hidden": false,
+                  "hint": null,
+                  "activation": {
+                   "x": 201,
+                   "y": 89
+                  },
+                  "modal": false
+                 },
+                 "axElements": [],
+                 "interaction": false,
+                 "bg": null,
+                 "alpha": 1,
+                 "children": [],
+                 "hidden": false,
+                 "kind": "view"
+                },
+                {
+                 "cls": "UIKit.NavigationBarPlatterContainer_v2",
+                 "opaque": true,
+                 "frame": {
+                  "y": 62,
+                  "w": 402,
+                  "x": 0,
+                  "h": 54
+                 },
+                 "clips": 0,
+                 "ax": {
+                  "id": null,
+                  "customActions": 0,
+                  "label": null,
+                  "traits": [],
+                  "frame": {
+                   "y": 62,
+                   "w": 402,
+                   "x": 0,
+                   "h": 54
+                  },
+                  "interactive": true,
+                  "element": false,
+                  "traitsRaw": 0,
+                  "value": null,
+                  "hidden": false,
+                  "hint": null,
+                  "activation": {
+                   "x": 201,
+                   "y": 89
+                  },
+                  "modal": false
+                 },
+                 "axElements": [],
+                 "interaction": true,
+                 "bg": null,
+                 "alpha": 1,
+                 "children": [
+                  {
+                   "cls": "_TtGC5UIKitP10$1c5763a3c27PlatterContainerHostingViewVS_P10$1c5763c1027NavigationBarPlatterContent_",
+                   "opaque": true,
+                   "frame": {
+                    "y": 62,
+                    "w": 402,
+                    "x": 0,
+                    "h": 54
+                   },
+                   "clips": 0,
+                   "ax": {
+                    "id": null,
+                    "customActions": 0,
+                    "label": null,
+                    "traits": [],
+                    "frame": {
+                     "y": 62,
+                     "w": 402,
+                     "x": 0,
+                     "h": 54
+                    },
+                    "interactive": true,
+                    "element": false,
+                    "traitsRaw": 0,
+                    "value": null,
+                    "hidden": false,
+                    "hint": null,
+                    "activation": {
+                     "x": 201,
+                     "y": 89
+                    },
+                    "modal": false
+                   },
+                   "axElements": [],
+                   "interaction": true,
+                   "bg": null,
+                   "alpha": 1,
+                   "children": [
+                    {
+                     "cls": "SwiftUI._UIInheritedView",
+                     "opaque": true,
+                     "frame": {
+                      "y": 62,
+                      "w": 402,
+                      "x": 0,
+                      "h": 54
+                     },
+                     "clips": 0,
+                     "ax": {
+                      "id": null,
+                      "customActions": 0,
+                      "label": null,
+                      "traits": [],
+                      "frame": {
+                       "y": 62,
+                       "w": 402,
+                       "x": 0,
+                       "h": 54
+                      },
+                      "interactive": true,
+                      "element": false,
+                      "traitsRaw": 0,
+                      "value": null,
+                      "hidden": false,
+                      "hint": null,
+                      "activation": {
+                       "x": 201,
+                       "y": 89
+                      },
+                      "modal": false
+                     },
+                     "axElements": [],
+                     "interaction": true,
+                     "bg": null,
+                     "alpha": 1,
+                     "children": [
+                      {
+                       "cls": "SwiftUI._UIInheritedView",
+                       "opaque": true,
+                       "frame": {
+                        "y": 62,
+                        "w": 402,
+                        "x": 0,
+                        "h": 54
+                       },
+                       "clips": 0,
+                       "ax": {
+                        "id": null,
+                        "customActions": 0,
+                        "label": null,
+                        "traits": [],
+                        "frame": {
+                         "y": 62,
+                         "w": 402,
+                         "x": 0,
+                         "h": 54
+                        },
+                        "interactive": true,
+                        "element": false,
+                        "traitsRaw": 0,
+                        "value": null,
+                        "hidden": false,
+                        "hint": null,
+                        "activation": {
+                         "x": 201,
+                         "y": 89
+                        },
+                        "modal": false
+                       },
+                       "axElements": [],
+                       "interaction": true,
+                       "bg": null,
+                       "alpha": 1,
+                       "children": [
+                        {
+                         "cls": "SwiftUI._UIInheritedView",
+                         "opaque": true,
+                         "frame": {
+                          "y": 62,
+                          "w": 0,
+                          "x": 0,
+                          "h": 0
+                         },
+                         "clips": 0,
+                         "ax": {
+                          "id": null,
+                          "customActions": 0,
+                          "label": null,
+                          "traits": [],
+                          "frame": {
+                           "y": 62,
+                           "w": 0,
+                           "x": 0,
+                           "h": 0
+                          },
+                          "interactive": true,
+                          "element": false,
+                          "traitsRaw": 0,
+                          "value": null,
+                          "hidden": false,
+                          "hint": null,
+                          "activation": {
+                           "x": 0,
+                           "y": 62
+                          },
+                          "modal": false
+                         },
+                         "axElements": [],
+                         "interaction": true,
+                         "bg": null,
+                         "alpha": 1,
+                         "children": [
+                          {
+                           "cls": "_TtC5UIKitP33_F83AB3ECBB2C378B4FCEB681A4D7DB7430UIPlatformGlassInteractionView",
+                           "opaque": true,
+                           "frame": {
+                            "y": 62,
+                            "w": 44,
+                            "x": 16,
+                            "h": 44
+                           },
+                           "clips": 0,
+                           "ax": {
+                            "id": null,
+                            "customActions": 0,
+                            "label": null,
+                            "traits": [],
+                            "frame": {
+                             "y": 62,
+                             "w": 44,
+                             "x": 16,
+                             "h": 44
+                            },
+                            "interactive": true,
+                            "element": false,
+                            "traitsRaw": 0,
+                            "value": null,
+                            "hidden": false,
+                            "hint": null,
+                            "activation": {
+                             "x": 38,
+                             "y": 84
+                            },
+                            "modal": false
+                           },
+                           "axElements": [],
+                           "interaction": true,
+                           "bg": null,
+                           "alpha": 1,
+                           "children": [
+                            {
+                             "cls": "SwiftUI._UIInheritedView",
+                             "opaque": true,
+                             "frame": {
+                              "y": 62,
+                              "w": 44,
+                              "x": 16,
+                              "h": 44
+                             },
+                             "clips": 0,
+                             "ax": {
+                              "id": null,
+                              "customActions": 0,
+                              "label": null,
+                              "traits": [],
+                              "frame": {
+                               "y": 62,
+                               "w": 44,
+                               "x": 16,
+                               "h": 44
+                              },
+                              "interactive": true,
+                              "element": false,
+                              "traitsRaw": 0,
+                              "value": null,
+                              "hidden": false,
+                              "hint": null,
+                              "activation": {
+                               "x": 38,
+                               "y": 84
+                              },
+                              "modal": false
+                             },
+                             "axElements": [],
+                             "interaction": true,
+                             "bg": null,
+                             "alpha": 1,
+                             "children": [
+                              {
+                               "cls": "_TtGC5UIKit22UICorePlatformViewHostGVS_32PlatformViewRepresentableAdaptorVS_P10$1c5763d6033NavigationBarPlatterRepresentable__",
+                               "opaque": true,
+                               "frame": {
+                                "y": 62,
+                                "w": 44,
+                                "x": 16,
+                                "h": 44
+                               },
+                               "clips": 0,
+                               "ax": {
+                                "id": null,
+                                "customActions": 0,
+                                "label": null,
+                                "traits": [],
+                                "frame": {
+                                 "y": 62,
+                                 "w": 44,
+                                 "x": 16,
+                                 "h": 44
+                                },
+                                "interactive": true,
+                                "element": false,
+                                "traitsRaw": 0,
+                                "value": null,
+                                "hidden": false,
+                                "hint": null,
+                                "activation": {
+                                 "x": 38,
+                                 "y": 84
+                                },
+                                "modal": false
+                               },
+                               "axElements": [],
+                               "interaction": true,
+                               "bg": null,
+                               "alpha": 1,
+                               "children": [
+                                {
+                                 "cls": "_UIButtonBarButton",
+                                 "opaque": true,
+                                 "control": {
+                                  "enabled": true,
+                                  "selected": false,
+                                  "highlighted": false
+                                 },
+                                 "frame": {
+                                  "y": 62,
+                                  "w": 44,
+                                  "x": 16,
+                                  "h": 44
+                                 },
+                                 "clips": 0,
+                                 "ax": {
+                                  "id": "BackButton",
+                                  "customActions": 0,
+                                  "label": "",
+                                  "traits": [],
+                                  "frame": {
+                                   "y": 62,
+                                   "w": 44,
+                                   "x": 16,
+                                   "h": 44
+                                  },
+                                  "interactive": true,
+                                  "element": true,
+                                  "traitsRaw": 134217728,
+                                  "value": null,
+                                  "hidden": false,
+                                  "hint": null,
+                                  "activation": {
+                                   "x": 38,
+                                   "y": 84
+                                  },
+                                  "modal": false
+                                 },
+                                 "axElements": [],
+                                 "interaction": true,
+                                 "bg": null,
+                                 "alpha": 1,
+                                 "children": [
+                                  {
+                                   "cls": "_TtCC5UIKit29ButtonBarButtonVisualProviderP33_A98CD29F4F6ECA17AFECE41BBB264E5918BackButtonMaskView",
+                                   "opaque": true,
+                                   "frame": {
+                                    "y": 62,
+                                    "w": 44,
+                                    "x": 16,
+                                    "h": 44
+                                   },
+                                   "clips": 0,
+                                   "ax": {
+                                    "id": null,
+                                    "customActions": 0,
+                                    "label": null,
+                                    "traits": [],
+                                    "frame": {
+                                     "y": 62,
+                                     "w": 44,
+                                     "x": 16,
+                                     "h": 44
+                                    },
+                                    "interactive": true,
+                                    "element": false,
+                                    "traitsRaw": 0,
+                                    "value": null,
+                                    "hidden": true,
+                                    "hint": null,
+                                    "activation": {
+                                     "x": 38,
+                                     "y": 84
+                                    },
+                                    "modal": false
+                                   },
+                                   "axElements": [],
+                                   "interaction": false,
+                                   "bg": null,
+                                   "alpha": 1,
+                                   "children": [
+                                    {
+                                     "cls": "UIImageView",
+                                     "opaque": false,
+                                     "frame": {
+                                      "y": 70.33,
+                                      "w": 19.67,
+                                      "x": 16,
+                                      "h": 28
+                                     },
+                                     "clips": 0,
+                                     "ax": {
+                                      "id": "UINavigationBarTitleTransitionBackIndicatorMaskSymbol",
+                                      "customActions": 0,
+                                      "label": null,
+                                      "traits": [
+                                       "image"
+                                      ],
+                                      "frame": {
+                                       "y": 70.33,
+                                       "w": 19.67,
+                                       "x": 16,
+                                       "h": 28
+                                      },
+                                      "interactive": false,
+                                      "element": false,
+                                      "traitsRaw": 4,
+                                      "value": null,
+                                      "hidden": false,
+                                      "hint": null,
+                                      "activation": {
+                                       "x": 25.83,
+                                       "y": 84.33
+                                      },
+                                      "modal": false
+                                     },
+                                     "axElements": [],
+                                     "interaction": false,
+                                     "bg": null,
+                                     "image": {
+                                      "y": 0,
+                                      "w": 17,
+                                      "x": 0,
+                                      "h": 22
+                                     },
+                                     "alpha": 1,
+                                     "children": [],
+                                     "hidden": false,
+                                     "kind": "view"
+                                    },
+                                    {
+                                     "cls": "UIView",
+                                     "opaque": true,
+                                     "frame": {
+                                      "y": 62,
+                                      "w": 0,
+                                      "x": 60,
+                                      "h": 44
+                                     },
+                                     "clips": 0,
+                                     "ax": {
+                                      "id": null,
+                                      "customActions": 0,
+                                      "label": null,
+                                      "traits": [],
+                                      "frame": {
+                                       "y": 62,
+                                       "w": 0,
+                                       "x": 60,
+                                       "h": 44
+                                      },
+                                      "interactive": true,
+                                      "element": false,
+                                      "traitsRaw": 0,
+                                      "value": null,
+                                      "hidden": false,
+                                      "hint": null,
+                                      "activation": {
+                                       "x": 60,
+                                       "y": 84
+                                      },
+                                      "modal": false
+                                     },
+                                     "axElements": [],
+                                     "interaction": true,
+                                     "bg": "rgba(255,255,255,1.000)",
+                                     "alpha": 1,
+                                     "children": [],
+                                     "hidden": false,
+                                     "kind": "view"
+                                    }
+                                   ],
+                                   "hidden": true,
+                                   "kind": "view"
+                                  },
+                                  {
+                                   "cls": "_TtCC5UIKit29ButtonBarButtonVisualProviderP33_A98CD29F4F6ECA17AFECE41BBB264E596Button",
+                                   "opaque": false,
+                                   "control": {
+                                    "enabled": true,
+                                    "selected": false,
+                                    "highlighted": false
+                                   },
+                                   "frame": {
+                                    "y": 72.67,
+                                    "w": 44,
+                                    "x": 16,
+                                    "h": 23
+                                   },
+                                   "clips": 0,
+                                   "ax": {
+                                    "id": null,
+                                    "customActions": 0,
+                                    "label": "Back",
+                                    "traits": [
+                                     "button",
+                                     "notEnabled"
+                                    ],
+                                    "frame": {
+                                     "y": 72.67,
+                                     "w": 44,
+                                     "x": 16,
+                                     "h": 23
+                                    },
+                                    "interactive": false,
+                                    "element": true,
+                                    "traitsRaw": 257,
+                                    "value": null,
+                                    "hidden": false,
+                                    "hint": null,
+                                    "activation": {
+                                     "x": 37.83,
+                                     "y": 84.17
+                                    },
+                                    "modal": false
+                                   },
+                                   "title": null,
+                                   "interaction": false,
+                                   "bg": null,
+                                   "titleColor": "rgba(0,136,255,1.000)",
+                                   "alpha": 1,
+                                   "axElements": [],
+                                   "hidden": false,
+                                   "children": [
+                                    {
+                                     "cls": "UIImageView",
+                                     "opaque": false,
+                                     "frame": {
+                                      "y": 72.67,
+                                      "w": 16.33,
+                                      "x": 29.67,
+                                      "h": 23
+                                     },
+                                     "clips": 0,
+                                     "ax": {
+                                      "id": "chevron.backward",
+                                      "customActions": 0,
+                                      "label": "Back",
+                                      "traits": [
+                                       "image"
+                                      ],
+                                      "frame": {
+                                       "y": 72.67,
+                                       "w": 16.33,
+                                       "x": 29.67,
+                                       "h": 23
+                                      },
+                                      "interactive": false,
+                                      "element": false,
+                                      "traitsRaw": 4,
+                                      "value": null,
+                                      "hidden": false,
+                                      "hint": null,
+                                      "activation": {
+                                       "x": 37.83,
+                                       "y": 84.17
+                                      },
+                                      "modal": false
+                                     },
+                                     "axElements": [],
+                                     "interaction": false,
+                                     "bg": null,
+                                     "image": {
+                                      "y": 0,
+                                      "w": 12.67,
+                                      "x": 0,
+                                      "h": 17.33
+                                     },
+                                     "alpha": 1,
+                                     "children": [],
+                                     "hidden": false,
+                                     "kind": "view"
+                                    }
+                                   ],
+                                   "kind": "view",
+                                   "hasImage": 1
+                                  }
+                                 ],
+                                 "hidden": false,
+                                 "kind": "view"
+                                }
+                               ],
+                               "hidden": false,
+                               "kind": "view"
+                              }
+                             ],
+                             "hidden": false,
+                             "kind": "view"
+                            }
+                           ],
+                           "hidden": false,
+                           "kind": "view"
+                          }
+                         ],
+                         "hidden": false,
+                         "kind": "view"
+                        }
+                       ],
+                       "hidden": false,
+                       "kind": "view"
+                      }
+                     ],
+                     "hidden": false,
+                     "kind": "view"
+                    }
+                   ],
+                   "hidden": false,
+                   "kind": "view"
+                  },
+                  {
+                   "cls": "_UIPointerInteractionAssistantEffectContainerView",
+                   "opaque": true,
+                   "frame": {
+                    "y": 62,
+                    "w": 0,
+                    "x": 0,
+                    "h": 0
+                   },
+                   "clips": 0,
+                   "ax": {
+                    "id": null,
+                    "customActions": 0,
+                    "label": null,
+                    "traits": [],
+                    "frame": {
+                     "y": 62,
+                     "w": 0,
+                     "x": 0,
+                     "h": 0
+                    },
+                    "interactive": true,
+                    "element": false,
+                    "traitsRaw": 0,
+                    "value": null,
+                    "hidden": false,
+                    "hint": null,
+                    "activation": {
+                     "x": 0,
+                     "y": 62
+                    },
+                    "modal": false
+                   },
+                   "axElements": [],
+                   "interaction": false,
+                   "bg": null,
+                   "alpha": 1,
+                   "children": [],
+                   "hidden": false,
+                   "kind": "view"
+                  }
+                 ],
+                 "hidden": false,
+                 "kind": "view"
+                }
+               ],
+               "hidden": false,
+               "kind": "view"
+              }
+             ],
+             "hidden": false,
+             "kind": "view"
+            },
+            {
+             "cls": "_UIPointerInteractionAssistantEffectContainerView",
+             "opaque": true,
+             "frame": {
+              "y": 62,
+              "w": 0,
+              "x": 0,
+              "h": 0
+             },
+             "clips": 0,
+             "ax": {
+              "id": null,
+              "customActions": 0,
+              "label": null,
+              "traits": [],
+              "frame": {
+               "y": 62,
+               "w": 0,
+               "x": 0,
+               "h": 0
+              },
+              "interactive": true,
+              "element": false,
+              "traitsRaw": 0,
+              "value": null,
+              "hidden": false,
+              "hint": null,
+              "activation": {
+               "x": 0,
+               "y": 62
+              },
+              "modal": false
+             },
+             "axElements": [],
+             "interaction": false,
+             "bg": null,
+             "alpha": 1,
+             "children": [],
+             "hidden": false,
+             "kind": "view"
+            }
+           ],
+           "hidden": false,
+           "kind": "view"
+          },
+          {
+           "cls": "_UIFloatingBarContainerView",
+           "opaque": true,
+           "frame": {
+            "y": 0,
+            "w": 402,
+            "x": 0,
+            "h": 874
+           },
+           "clips": 0,
+           "ax": {
+            "id": "Toolbar",
+            "customActions": 0,
+            "label": "Toolbar",
+            "traits": [],
+            "frame": {
+             "y": 0,
+             "w": 402,
+             "x": 0,
+             "h": 874
+            },
+            "interactive": true,
+            "element": false,
+            "traitsRaw": 0,
+            "value": null,
+            "hidden": false,
+            "hint": null,
+            "activation": {
+             "x": 201,
+             "y": 437
+            },
+            "modal": false
+           },
+           "axElements": [],
+           "interaction": true,
+           "bg": null,
+           "alpha": 1,
+           "children": [
+            {
+             "cls": "_TtGC5UIKitP10$1c5774cd822FloatingBarHostingViewVS_20FloatingBarContainer_",
+             "opaque": true,
+             "frame": {
+              "y": 0,
+              "w": 402,
+              "x": 0,
+              "h": 874
+             },
+             "clips": 0,
+             "ax": {
+              "id": null,
+              "customActions": 0,
+              "label": null,
+              "traits": [],
+              "frame": {
+               "y": 0,
+               "w": 402,
+               "x": 0,
+               "h": 874
+              },
+              "interactive": true,
+              "element": false,
+              "traitsRaw": 0,
+              "value": null,
+              "hidden": false,
+              "hint": null,
+              "activation": {
+               "x": 201,
+               "y": 437
+              },
+              "modal": false
+             },
+             "axElements": [],
+             "interaction": true,
+             "bg": null,
+             "alpha": 1,
+             "children": [],
+             "hidden": false,
+             "kind": "view"
+            },
+            {
+             "cls": "_UIPointerInteractionAssistantEffectContainerView",
+             "opaque": true,
+             "frame": {
+              "y": 0,
+              "w": 0,
+              "x": 0,
+              "h": 0
+             },
+             "clips": 0,
+             "ax": {
+              "id": null,
+              "customActions": 0,
+              "label": null,
+              "traits": [],
+              "frame": {
+               "y": 0,
+               "w": 0,
+               "x": 0,
+               "h": 0
+              },
+              "interactive": true,
+              "element": false,
+              "traitsRaw": 0,
+              "value": null,
+              "hidden": false,
+              "hint": null,
+              "activation": {
+               "x": 0,
+               "y": 0
+              },
+              "modal": false
+             },
+             "axElements": [],
+             "interaction": false,
+             "bg": null,
+             "alpha": 1,
+             "children": [],
+             "hidden": false,
+             "kind": "view"
+            }
+           ],
+           "hidden": false,
+           "kind": "view"
+          }
+         ],
+         "hidden": false,
+         "kind": "view"
+        }
+       ],
+       "hidden": false,
+       "kind": "view"
+      }
+     ],
+     "hidden": false,
+     "kind": "view"
+    }
+   ],
+   "hidden": false,
+   "kind": "view",
+   "windowLevel": 0
+  }
+ ],
+ "format": "vlmkit-ios-dump/1",
+ "ok": true,
+ "platform": "ios-simulator"
+}

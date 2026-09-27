@@ -33,7 +33,8 @@ describe("composed built-in registry", () => {
     // createGateRegistry throws on a conflict, so reaching this line is the
     // assertion; the count guards against a plugin silently dropping out.
     const r = await registry();
-    assert.equal(r.list().length, 34);
+    // 34 → 35 (2026-09-28): `scan scene`, the iOS Simulator's scene for the --elements gates.
+    assert.equal(r.list().length, 35);
   });
 
   it("keeps each gate id in step with its command path", async () => {
@@ -228,8 +229,13 @@ describe("composed built-in registry", () => {
     //       per line, found by eye 17 times on the demo sites and by no gate —
     //       `untested-media-feature` (info), which says which conditions the generator could
     //       not vary rather than implying they were covered, and `redirected`.
+    // 208 → 209: `scan scene`, a scene (`--elements` JSON) and its 1x frame from the iOS
+    //       Simulator — the app relaunched with vlmkit's agent injected, no code of vlmkit's
+    //       in it. Its one rule is `scene-empty`: a scene with no text passes every gate
+    //       downstream for the wrong reason. `scan a11y` gained `ios:<bundle-id>` as a source
+    //       in the same change and no rule. docs/ios-simulator.md.
     const total = (await registry()).list().reduce((n, { gate }) => n + gate.rules.length, 0);
-    assert.equal(total, 208);
+    assert.equal(total, 209);
   });
 
   it("tracks which gates render their own rule settings, and which still cannot", async () => {
@@ -276,6 +282,7 @@ describe("composed built-in registry", () => {
       "check.tokens",
       "scan.a11y",
       "scan.handlers",
+      "scan.scene",
       "scan.scroll",
       "scan.style",
       "stress.i18n",

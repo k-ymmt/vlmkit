@@ -97,6 +97,8 @@ function defaultPort(protocol: string): string {
 }
 
 export function urlToSnapshotLabel(url: string): string {
+  // An iOS Simulator source: the bundle id is the whole identity.
+  if (/^ios:/i.test(url)) return `ios-${sanitizeLabelPart(url.slice(4)) || "app"}`;
   try {
     const parsed = new URL(url);
     const path = sanitizeLabelPart(parsed.pathname.replace(/\.html$/i, "").replace(/\//g, "_")) || "root";

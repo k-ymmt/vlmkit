@@ -5,7 +5,9 @@ app, a macOS or Windows desktop app has no DOM worth reading. Flutter web does h
 it paints nothing into it. What each of these platforms *does* have is an accessibility tree
 and a screen. `vlmkit-a11y/1` is that pair as a file. Two gates work with it:
 
-- `vlmkit scan a11y` writes one from a Flutter web page or an Android `uiautomator dump`.
+- `vlmkit scan a11y` writes one from a Flutter web page, an Android `uiautomator dump`, or an
+  app on the booted iOS Simulator (`ios:<bundle-id>` — the app is relaunched with vlmkit's
+  agent injected; `docs/ios-simulator.md`).
 - `vlmkit check a11y tree` judges it, from any platform, with no browser.
 
 ```mermaid
@@ -13,7 +15,8 @@ flowchart LR
   subgraph collectors["collectors — one per platform, outside the judges"]
     fw["Flutter web<br/>vlmkit scan a11y &lt;url&gt;"]
     an["Android<br/>vlmkit scan a11y ui.xml --density N"]
-    other["macOS AX · Windows UIA · iOS ·<br/>Flutter desktop — your own script"]
+    ios["iOS Simulator<br/>vlmkit scan a11y ios:&lt;bundle-id&gt;"]
+    other["macOS AX · Windows UIA ·<br/>Flutter desktop — your own script"]
   end
   collectors --> tree["a11y.json (vlmkit-a11y/1)<br/>+ frame.png"]
   tree --> check["vlmkit check a11y tree"]
@@ -33,6 +36,10 @@ vlmkit check a11y tree a11y.json
 adb shell uiautomator dump /sdcard/ui.xml && adb pull /sdcard/ui.xml
 adb exec-out screencap -p > frame.png
 vlmkit scan a11y ui.xml --density "$(adb shell wm density | grep -o '[0-9]*$')" --frame frame.png --out a11y.json
+vlmkit check a11y tree a11y.json
+
+# iOS Simulator: no code in the app; --tap reaches a screen with a synthesized, hit-tested touch
+vlmkit scan a11y ios:dev.vlmkit.sample --tap "Open profile" --out a11y.json
 vlmkit check a11y tree a11y.json
 ```
 
@@ -75,7 +82,8 @@ writes this JSON:
 
 - **macOS:** `AXUIElement`, via `AXRole`, `AXTitle`/`AXDescription`, `AXFrame` and `AXEnabled`.
 - **Windows:** UI Automation, via `ControlType`, `Name`, `BoundingRectangle` and `IsEnabled`.
-- **iOS:** the XCUITest hierarchy.
+- **iOS on a device:** the XCUITest hierarchy (the Simulator collector is built in; a device
+  honours neither `DYLD_INSERT_LIBRARIES` nor `simctl`).
 - **Flutter on any platform:** a `SemanticsNode` dump.
 
 Nothing in `check a11y tree` knows which platform wrote the file.

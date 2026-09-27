@@ -2,12 +2,15 @@
  * `vlmkit scan a11y`: write a platform's accessibility tree and its frame as a
  * `vlmkit-a11y/1` file, for `vlmkit check a11y tree` to judge.
  *
- * Two collectors today, chosen by the source:
+ * Three collectors today, chosen by the source:
  *
  * - a page (URL or HTML file) → the Flutter web collector (`flutter-web.ts`), in a browser;
- * - a `.xml` file → the Android `uiautomator dump` importer (`uiautomator.ts`), no browser.
+ * - a `.xml` file → the Android `uiautomator dump` importer (`uiautomator.ts`), no browser;
+ * - `ios:<bundle-id>` → the iOS Simulator collector (`../ios/`): the app is relaunched with
+ *   vlmkit's agent injected and asked for its accessibility elements; a saved dump
+ *   (`.json`, from `--dump`) is converted the same way with no simulator.
  *
- * Anything else — macOS AX, Windows UI Automation, iOS, a Flutter desktop app's semantics
+ * Anything else — macOS AX, Windows UI Automation, a Flutter desktop app's semantics
  * dump — writes the same JSON with its own tool; nothing downstream knows which wrote it.
  */
 import { mkdir, readFile, writeFile } from "node:fs/promises";
@@ -29,19 +32,25 @@ import {
   type FlutterWebRawNode,
 } from "./flutter-web.ts";
 import { importUiautomatorDump } from "./uiautomator.ts";
+import { bundleIdOf, captureIos, isIosSource } from "../ios/capture-ios.ts";
+import { iosDumpToA11yTree, parseIosDump } from "../ios/dump.ts";
 
 /** Where `scan a11y` writes when `--out` is not given. */
 export const DEFAULT_A11Y_TREE = ".vlmkit/a11y.json";
 
 export interface ScanA11yOptions extends PageLoadOptions {
-  /** A page (Flutter web), or a uiautomator dump (`.xml`). */
+  /** A page (Flutter web), a uiautomator dump (`.xml`), `ios:<bundle-id>`, or an iOS dump (`.json`). */
   source: string;
   out: string;
   /** Frame PNG: written for a page, read (as given) for a dump. */
   frame?: string;
   viewport?: { width: number; height: number };
-  /** Tap these by accessible name, in order, before collecting (a page only). */
+  /** Tap these by accessible name, in order, before collecting (a page, or iOS as `--tap`). */
   clicks?: string[];
+  /** iOS: the simulator (`booted`, a UDID or a name). */
+  device?: string;
+  /** iOS: also write the raw agent dump here. */
+  dump?: string;
   /** Device dpi, for a uiautomator dump. */
   density?: number;
   /** BCP 47 locale for the page. Default en-US: see `captureFlutterWeb`. */
@@ -58,9 +67,12 @@ export interface ScanA11yReport {
   redirect: string | null;
   clicks: string[];
   counts: { nodes: number; named: number; interactive: number };
+  /** Progress the collector reported (iOS: device, agent, taps). */
+  notes: string[];
 }
 
 const isDump = (source: string) => extname(source).toLowerCase() === ".xml";
+const isIosDump = (source: string) => extname(source).toLowerCase() === ".json";
 
 /** The semantics tree is built asynchronously; it is ready when its size stops changing. */
 async function waitForSemantics(page: Page, deadline: number, minQuietMs = 500): Promise<{ flutter: boolean; nodes: number }> {
@@ -140,7 +152,29 @@ export async function runScanA11y(options: ScanA11yOptions): Promise<ScanA11yRep
   let tree: A11yTree;
   let redirect: string | null = null;
   let frame: string | null;
-  if (isDump(options.source)) {
+  const notes: string[] = [];
+  if (isIosSource(options.source)) {
+    frame = resolve(options.frame ?? `${out.slice(0, out.length - extname(out).length)}.png`);
+    const captured = await captureIos({
+      bundleId: bundleIdOf(options.source),
+      device: options.device,
+      taps: options.clicks,
+      framePath: frame,
+      dumpPath: options.dump ? resolve(options.dump) : undefined,
+      timeoutMs: options.timeout,
+      log: (line) => notes.push(line),
+    });
+    tree = iosDumpToA11yTree(captured.dump, { frame: relative(dirname(out), frame) || basename(frame) });
+  } else if (isIosDump(options.source)) {
+    frame = options.frame ? resolve(options.frame) : null;
+    let text: string;
+    try {
+      text = await readFile(options.source, "utf8");
+    } catch (error) {
+      throw new UsageError(`cannot read ${options.source}: ${(error as Error).message}`);
+    }
+    tree = iosDumpToA11yTree(parseIosDump(text), frame ? { frame: relative(dirname(out), frame) } : {});
+  } else if (isDump(options.source)) {
     if (options.density === undefined) {
       throw new UsageError(
         "a uiautomator dump needs --density: its bounds are device pixels and target sizes are judged in dp."
@@ -168,6 +202,7 @@ export async function runScanA11y(options: ScanA11yOptions): Promise<ScanA11yRep
     viewport: tree.viewport,
     redirect,
     clicks: options.clicks ?? [],
+    notes,
     counts: {
       nodes: tree.nodes.length,
       named: tree.nodes.filter((n) => (n.name ?? "").trim()).length,

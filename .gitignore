@@ -52,3 +52,6 @@ _flaky_count.txt
 # root-anchored pattern left that copy tracked-able — one `git add -A` from publishing a stale
 # duplicate of the whole site.
 .pages/
+
+# The iOS fixture app (examples/ios-sample/build.sh): built with swiftc at test time, never committed
+/examples/ios-sample/build/

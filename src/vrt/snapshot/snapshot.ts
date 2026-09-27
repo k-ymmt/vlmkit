@@ -31,6 +31,7 @@ import {
   type StabilityReport,
 } from "./stability.ts";
 import { resolveCaptureBackend, type CaptureBackend } from "@mizchi/vlmkit-capture/capturer.ts";
+import { isIosSource, runIosSnapshot } from "./snapshot-ios.ts";
 import { writeFlipbook, type FlipbookFrame } from "../compare/flipbook.ts";
 import type { VrtSnapshot } from "@mizchi/vlmkit-core/types.ts";
 
@@ -57,6 +58,7 @@ function formatSnapshotUsage(): string {
   return [
     "Usage:",
     "  vlmkit snapshot <url1> [url2] ... [--output dir] [--label name] [--threshold 0.1] [--fail-on-diff] [--fail-on-new-baseline] [--max-diff-ratio n] [--backend local|cloudflare] [--config vlmkit.config.json]",
+    "  vlmkit snapshot ios:<bundle-id> [ios:<bundle-id> ...] [--output dir] [--label name] [--threshold 0.1] [--fail-on-diff]   # the booted iOS Simulator's frame (docs/ios-simulator.md)",
     "  vlmkit snapshot approve [--output dir] [--label name] [--config vlmkit.config.json]",
     "  vlmkit snapshot fix-prompt [--output dir] [--label name] [--format markdown|json] [--limit n] [--min-diff 0.01] [--out path] [--config vlmkit.config.json]",
     "  vlmkit snapshot stability <url1> [url2]... [--iterations 3] [--output dir] [--threshold 0.1] [--fp-threshold 0] [--fail-above-rate 0.05] [--config vlmkit.config.json]",
@@ -531,6 +533,25 @@ export async function runSnapshotCli(
       outPath: parsed.stabilityHistory?.outPath,
     });
     return 0;
+  }
+
+  // `ios:<bundle-id>` sources take the simulator's screenshot instead of a browser's; the
+  // baseline / diff / ledger half is the same. Mixing the two in one run is refused, because
+  // one report would then carry two kinds of viewport.
+  if (parsed.mode === "capture" && parsed.urls.some(isIosSource)) {
+    if (!parsed.urls.every(isIosSource)) {
+      throw new Error("vlmkit snapshot: ios:<bundle-id> sources cannot be mixed with URLs in one run.");
+    }
+    return await runIosSnapshot({
+      sources: parsed.urls,
+      labels: parsed.labels,
+      outputDir,
+      threshold: parsed.threshold,
+      failOnDiff: parsed.failOnDiff,
+      failOnNewBaseline: parsed.failOnNewBaseline,
+      maxDiffRatio: parsed.maxDiffRatio,
+      configPath,
+    });
   }
 
   const { backend: captureBackend, source: backendSource } = resolveCaptureBackend({
